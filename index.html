@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Maul & Dita</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0b1221', 
+                        gold: '#d4af37', 
+                        melati: '#f8f9fa', 
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'swing': 'swing 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        swing: {
+                            '0%, 100%': { transform: 'rotate(-5deg)' },
+                            '50%': { transform: 'rotate(5deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-vibes { font-family: 'Great Vibes', cursive; } 
+        .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-pinyon { font-family: 'Pinyon Script', cursive; }
+    </style>
+</head>
+
+<body class="overflow-x-hidden text-white relative font-sans selection:bg-gold selection:text-navy">
+
+    <audio id="lagu" loop>
+        <source src="assets/music/wedding.mp3" type="audio/mp3">
+    </audio>
+    <div id="tombol-musik" onclick="putarLagu()" class="fixed bottom-6 right-6 z-50 hidden cursor-pointer bg-navy/80 backdrop-blur-md p-3 rounded-full shadow-[0_0_15px_#d4af37] border border-gold animate-spin-slow hover:scale-110 transition">
+        <span class="text-2xl">⚜️</span>
+    </div>
+
+    <div id="cover" class="h-screen w-full flex flex-col justify-center items-center transition-all duration-1000 z-50 relative bg-navy/95">
+        <div class="text-center p-10 bg-navy/80 backdrop-blur-md border border-gold/40 shadow-[0_0_30px_rgba(212,175,55,0.15)] rounded-t-full rounded-b-2xl max-w-sm w-full mx-4 relative z-10 flex flex-col items-center" data-aos="zoom-in">
+            
+            <h3 class="font-cinzel tracking-[0.3em] uppercase text-[9px] mb-6 text-gold mt-6">The Wedding Of</h3>
+            
+            <h1 class="flex flex-col items-center justify-center w-full mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                <span class="font-pinyon text-7xl md:text-8xl text-white leading-none">Maul</span>
+                <span class="font-vibes text-4xl text-gold my-3">&</span>
+                <span class="font-pinyon text-7xl md:text-8xl text-white leading-none">Dita</span>
+            </h1>
+            
+            <div class="w-[85%] border-y border-gold/30 py-3 mb-10">
+                <p class="font-cinzel text-gold text-[11px] tracking-widest uppercase">Minggu, 19 April 2026</p>
+            </div>
+            
+            <div class="bg-[#070b14]/80 p-6 rounded-lg border border-gold/30 mb-8 w-[90%] shadow-inner">
+                <p class="font-cinzel text-[10px] text-gold mb-3 uppercase tracking-widest font-bold">Kepada Yth:</p>
+                <h2 id="guest-name" class="font-bold text-xl text-white font-serif animate-pulse-slow">Tamu Undangan</h2>
+            </div>
+
+            <p class="font-serif text-gold text-xs tracking-wider mb-6 drop-shadow-md">
+                #MAULangkahbersamaDITA
+            </p>
+
+            <button onclick="bukaUndangan()" class="bg-gradient-to-r from-gold to-yellow-600 text-navy px-8 py-3 mb-4 rounded-full hover:to-white hover:text-navy transition font-cinzel tracking-[0.2em] shadow-[0_0_20px_rgba(212,175,55,0.4)] font-bold transform hover:scale-105 duration-300 text-[10px]">
+                BUKA UNDANGAN
+            </button>
+        </div> </div> <main id="main-content" class="hidden transition-opacity duration-1000 opacity-0 relative z-10">
+        
+        <section class="pt-24 pb-12 px-4 text-center relative">
+            <div class="max-w-4xl mx-auto bg-navy/90 backdrop-blur-md rounded-t-full rounded-b-xl p-10 border border-gold/30 shadow-2xl" data-aos="fade-up">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Basmala.svg" class="h-10 mx-auto mb-8 opacity-90 invert drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]" alt="Bismillah">
+                
+                <h2 class="font-pinyon text-4xl text-gold mb-6">Assalamu’alaikum Wr. Wb.</h2>
+                <p class="font-serif text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto">
+                    Dengan memohon Rahmat dan Ridho Allah SWT, kami bermaksud menyelenggarakan resepsi pernikahan putra-putri kami:
+                </p>
+
+                <div class="bg-black/30 p-8 rounded-xl border border-gold/30 relative inline-block mx-auto hover:bg-black/50 transition duration-500">
+                    <span class="text-4xl text-gold absolute -top-4 left-4">❝</span>
+                    <p class="font-serif text-lg italic text-gray-200 mb-4 mt-2 leading-relaxed max-w-xl">
+                        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya..."
+                    </p>
+                    <h3 class="font-cinzel text-gold text-[10px] tracking-widest uppercase">QS. Ar-Rum: 21</h3>
+                    <span class="text-4xl text-gold absolute -bottom-8 right-4">❞</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-10 px-4 text-center">
+            <div class="max-w-5xl mx-auto bg-navy/90 backdrop-blur-md rounded-xl p-8 md:p-12 border-x border-gold/30 shadow-2xl" data-aos="fade-up">
+                <p class="font-pinyon text-gold/80 mb-12 text-2xl">"Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan..."</p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
+                    
+                    <div class="text-center group relative">
+                        <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition duration-700"></div>
+                        <div class="w-52 h-64 mx-auto rounded-t-full rounded-b-md overflow-hidden border-2 border-gold shadow-[0_0_30px_rgba(212,175,55,0.2)] mb-6 relative bg-navy">
+                            <img src="assets/images/Maul.JPG" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-1000">
+                        </div>
+                        <h2 class="font-pinyon text-4xl text-gold mt-4">Muhammad Maulana</h2>
+                        <div class="h-px w-20 bg-gold/50 mx-auto my-3"></div>
+                        <p class="font-cinzel text-[10px] text-gray-300 uppercase tracking-wider">Putra Bpk. Asep Cecep Sukarna & Ibu Rosita</p>
+                    </div>
+
+                    <div class="font-pinyon text-6xl text-gold/50 animate-pulse">&</div>
+
+                    <div class="text-center group relative">
+                        <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition duration-700"></div>
+                        <div class="w-52 h-64 mx-auto rounded-t-full rounded-b-md overflow-hidden border-2 border-gold shadow-[0_0_30px_rgba(212,175,55,0.2)] mb-6 relative bg-navy">
+                            <img src="assets/images/Dita.JPG" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-1000">
+                        </div>
+                        <h2 class="font-pinyon text-4xl text-gold mt-4">Dita Aprilia</h2>
+                        <div class="h-px w-20 bg-gold/50 mx-auto my-3"></div>
+                        <p class="font-cinzel text-[10px] text-gray-300 uppercase tracking-wider">Putri Bpk. Slamet & Ibu Yayam</p>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative h-[60vh] bg-fixed bg-center bg-cover bg-no-repeat border-y-4 border-gold/40" style="background-image: url('assets/images/prewed-bg.jpg');">
+            <div class="absolute inset-0 bg-navy/60 flex flex-col items-center justify-center text-center px-4">
+                <div class="border-2 border-gold/50 p-8 md:p-12 bg-navy/40 backdrop-blur-md rounded-none max-w-3xl" data-aos="zoom-in">
+                    <h2 class="font-pinyon text-5xl md:text-7xl text-white mb-2 drop-shadow-lg">Eternal Love</h2>
+                    <p class="font-cinzel text-gold text-sm tracking-[0.5em] uppercase">Maul & Dita</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 relative z-20">
+                
+                <div class="text-center mb-16" data-aos="fade-down">
+                    <div class="inline-block bg-navy/90 backdrop-blur-md border border-gold/40 rounded-2xl py-4 px-10 shadow-2xl">
+                        <h2 class="font-pinyon text-5xl md:text-6xl mb-2 text-gold drop-shadow-md">Kisah Kasih Kami</h2>
+                        <p class="text-center font-serif text-gray-200 italic">"Seperti bintang yang menemukan garis takdirnya..."</p>
+                    </div>
+                </div>
+
+                <div class="absolute left-[31px] md:left-1/2 top-40 h-[75%] w-[3px] bg-gold md:-ml-[1.5px] shadow-[0_0_15px_#d4af37] z-0 rounded-full"></div>
+
+                <div class="mb-16 flex justify-between items-center w-full right-timeline group">
+                    <div class="order-1 w-1/12 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-navy shadow-[0_0_15px_#d4af37] w-4 h-4 rotate-45 border border-gold md:mx-auto absolute left-6 md:static md:left-auto"></div>
+                    <div class="order-1 bg-navy/95 border-l-2 border-gold rounded-r-xl shadow-2xl w-10/12 md:w-5/12 px-6 py-6 ml-auto md:mr-auto transform hover:translate-x-2 transition duration-500" data-aos="fade-right">
+                        <h3 class="font-pinyon text-gold text-3xl font-bold mb-1">2017</h3>
+                        <h4 class="text-white text-lg font-cinzel font-bold uppercase mb-2 tracking-wide">Awal & 'Technical Support'</h4>
+                        <p class="text-xs text-gray-200 text-justify leading-relaxed font-serif">
+                            Kami bersekolah di SMK yang... identitasnya sengaja dirahasiakan. Mulai dekat di kelas 2 karena kelas berseberangan. Jarak fisik dekat, tapi pendekatan penuh tantangan—saya ditolak dua kali (statistik kegagalan yang konsisten). 
+                            <br><br>
+                            Percobaan ketiga baru berhasil, meski saya curiga itu karena laptopnya baru saja saya perbaiki. <i class="text-gold">Technical support</i> gratis memang punya daya tarik. Kami resmi berpacaran pada <b>27 April 2017</b>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-16 flex justify-between items-center w-full flex-row-reverse left-timeline group">
+                    <div class="order-1 w-1/12 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-navy shadow-[0_0_15px_#d4af37] w-4 h-4 rotate-45 border border-gold md:mx-auto absolute left-6 md:static md:left-auto"></div>
+                    <div class="order-1 bg-navy/95 border-r-2 border-gold rounded-l-xl shadow-2xl w-10/12 md:w-5/12 px-6 py-6 mr-auto md:ml-auto transform hover:-translate-x-2 transition duration-500" data-aos="fade-left">
+                        <h3 class="font-pinyon text-gold text-3xl font-bold mb-1">2020</h3>
+                        <h4 class="text-white text-lg font-cinzel font-bold uppercase mb-2 tracking-wide">Ujian Pertama</h4>
+                        <p class="text-xs text-gray-200 text-justify leading-relaxed font-serif">
+                            Perjalanan kami tidak selalu stabil seperti diagram presentasi. Tahun ini kami sempat memutuskan berpisah. Kami belajar bahwa terkadang jarak diperlukan untuk memahami arti kehadiran. 
+                            <br><br>
+                            Fase jeda yang cukup panjang, di mana kami sibuk memperbaiki diri menjadi versi yang lebih baik.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-16 flex justify-between items-center w-full right-timeline group">
+                    <div class="order-1 w-1/12 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-navy shadow-[0_0_15px_#d4af37] w-4 h-4 rotate-45 border border-gold md:mx-auto absolute left-6 md:static md:left-auto"></div>
+                    <div class="order-1 bg-navy/95 border-l-2 border-gold rounded-r-xl shadow-2xl w-10/12 md:w-5/12 px-6 py-6 ml-auto md:mr-auto transform hover:translate-x-2 transition duration-500" data-aos="fade-right">
+                        <h3 class="font-pinyon text-gold text-3xl font-bold mb-1">2021</h3>
+                        <h4 class="text-white text-lg font-cinzel font-bold uppercase mb-2 tracking-wide">Jalan Masing-Masing</h4>
+                        <p class="text-xs text-gray-200 text-justify leading-relaxed font-serif">
+                            Kami mencoba memperbaiki apa yang terhenti, namun ego dan keadaan memaksa kami benar-benar berhenti.
+                            <br><br>
+                            Kami melewati hari-hari tanpa satu sama lain, seolah sudah tidak ada lagi jalan untuk bersinggungan kembali.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-16 flex justify-between items-center w-full flex-row-reverse left-timeline group">
+                    <div class="order-1 w-1/12 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-navy shadow-[0_0_15px_#d4af37] w-4 h-4 rotate-45 border border-gold md:mx-auto absolute left-6 md:static md:left-auto"></div>
+                    <div class="order-1 bg-navy/95 border-r-2 border-gold rounded-l-xl shadow-2xl w-10/12 md:w-5/12 px-6 py-6 mr-auto md:ml-auto transform hover:-translate-x-2 transition duration-500" data-aos="fade-left">
+                        <h3 class="font-pinyon text-gold text-3xl font-bold mb-1">2023</h3>
+                        <h4 class="text-white text-lg font-cinzel font-bold uppercase mb-2 tracking-wide">Titik Balik</h4>
+                        <p class="text-xs text-gray-200 text-justify leading-relaxed font-serif">
+                            Seperti merpati yang tahu jalan pulang, kami kembali. Di titik ini saya sadar, sejauh apa pun saya pergi, <b class="text-gold">Dita adalah One Piece yang sesungguhnya</b> dalam hidup saya.
+                            <br><br>
+                            Kami sepakat berhenti sekadar "saling kembali" dan memutuskan berjalan bersama secara permanen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center w-full right-timeline group relative mt-12">
+                    <div class="order-1 w-1/12 md:w-5/12"></div>
+                    
+                    <div class="z-20 flex items-center order-1 bg-gold shadow-[0_0_30px_#d4af37] w-6 h-6 rotate-45 border-2 border-white md:mx-auto absolute left-6 md:static md:left-auto animate-pulse"></div>
+                    
+                    <div class="order-1 bg-gradient-to-br from-gold/90 to-yellow-700 text-white rounded-xl shadow-[0_0_40px_rgba(212,175,55,0.4)] w-10/12 md:w-5/12 px-6 py-8 ml-auto md:mr-auto transform scale-105 border border-white/30" data-aos="zoom-in">
+                        <h3 class="font-pinyon text-4xl mb-2 drop-shadow-md text-white">2026</h3>
+                        <h4 class="font-cinzel text-navy text-xl font-bold uppercase mb-4 border-b border-navy/40 pb-2 inline-block">The Wedding Day</h4>
+                        <p class="text-sm text-navy font-semibold text-justify leading-relaxed font-serif">
+                            Tahun ini adalah puncak dari segala proses yang telah kami lalui. Dimulai pada 4 Januari 2026, kami menutup perjalanan panjang penuh warna tersebut melalui momen lamaran.
+                            <br><br>
+                            Dan puncaknya, pada <b class="text-white bg-navy/60 px-2 py-0.5 rounded shadow-sm">19 April 2026</b>, kami akan resmi mengikat janji dalam pernikahan. Sebuah pembuktian bahwa petualangan paling hebat bukanlah tentang mencari harta karun baru, melainkan tentang menjaga apa yang sudah kita temukan sejak awal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 text-center">
+            <div class="max-w-6xl mx-auto px-4">
+                
+                <div class="inline-block bg-navy/90 backdrop-blur-md border border-gold/40 rounded-2xl py-4 px-10 mb-10 shadow-2xl" data-aos="fade-up">
+                    <h2 class="font-pinyon text-4xl md:text-5xl mb-2 text-gold">Momen Bahagia</h2>
+                    <p class="font-serif text-gray-200 text-sm">Potret kasih sayang kami menuju hari bahagia.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="relative group overflow-hidden rounded-xl border border-gold/30 h-64 md:h-80 shadow-lg" data-aos="fade-up"><img src="assets/images/gallery1.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"></div>
+                    <div class="relative group overflow-hidden rounded-xl border border-gold/30 h-64 md:h-80 shadow-lg" data-aos="fade-up"><img src="assets/images/gallery2.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"></div>
+                    <div class="relative group overflow-hidden rounded-xl border border-gold/30 h-64 md:h-80 shadow-lg" data-aos="fade-up"><img src="assets/images/gallery3.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"></div>
+                    <div class="relative group overflow-hidden rounded-xl border border-gold/30 h-64 md:h-80 shadow-lg" data-aos="fade-up"><img src="assets/images/gallery4.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"></div>
+                    <div class="relative group overflow-hidden rounded-xl border border-gold/30 h-64 md:h-80 shadow-lg" data-aos="fade-up"><img src="assets/images/gallery5.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"></div>
+                    <div class="relative group overflow-hidden rounded-xl border border-gold/30 h-64 md:h-80 shadow-lg" data-aos="fade-up"><img src="assets/images/gallery6.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 text-center">
+            <div class="max-w-4xl mx-auto px-4 bg-navy/90 backdrop-blur-md rounded-2xl p-10 border border-gold/40 shadow-2xl" data-aos="zoom-in">
+                <h3 class="font-cinzel text-lg font-bold text-gold mb-8 uppercase tracking-[0.3em]">Menuju Hari Bahagia</h3>
+                <div id="countdown" class="flex flex-wrap justify-center gap-6"></div>
+                
+                <div class="text-center mt-12 mb-4" data-aos="fade-up">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Maul+%26+Dita&dates=20260419T010000Z/20260419T060000Z&details=Undangan+Pernikahan+Maul+%26+Dita&location=Gor+Tanjung+Duren&sf=true&output=xml" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-3 bg-black/40 text-gold px-10 py-3 rounded-full border border-gold hover:bg-gold hover:text-navy transition duration-300 font-cinzel text-xs font-bold tracking-widest">
+                        <span></span> SAVE THE DATE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 text-center">
+            <div class="max-w-5xl mx-auto px-4">
+                
+                <div class="inline-block bg-navy/90 backdrop-blur-md border border-gold/40 rounded-2xl py-3 px-10 mb-12 shadow-2xl" data-aos="fade-down">
+                    <h2 class="font-pinyon text-4xl md:text-5xl text-gold">Save The Date</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-navy/95 p-8 rounded-tl-[3rem] rounded-br-[3rem] border border-gold/40 shadow-2xl relative overflow-hidden" data-aos="fade-right">
+                        <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-gold/30 rounded-tr-[2rem]"></div>
+                        <div class="text-4xl mb-4 text-gold">💍</div>
+                        <h3 class="font-pinyon text-4xl mb-2 text-white">Akad Nikah</h3>
+                        <div class="font-cinzel text-sm my-6 space-y-2 text-gray-200">
+                            <p class="font-bold text-gold text-lg">Minggu, 19 April 2026</p>
+                            <p>Pukul 08.00 - 10.00 WIB</p>
+                        </div>
+                        <p class="text-xs text-gray-300 mb-8 font-serif uppercase tracking-wider leading-relaxed">Gor Tanjung Duren<br>Jl. Tanjung Duren Barat IV No.10, RT.9/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470</p>
+                        <a href="https://maps.google.com/?q=Gor+Tanjung+Duren" target="_blank" class="text-[10px] bg-gold text-navy px-8 py-2 rounded-sm font-bold tracking-widest hover:bg-white transition">GOOGLE MAPS</a>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-gold/20 to-navy p-8 rounded-tr-[3rem] rounded-bl-[3rem] border border-gold/40 shadow-2xl relative overflow-hidden" data-aos="fade-left">
+                        <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-gold/30 rounded-tl-[2rem]"></div>
+                        <div class="text-4xl mb-4 text-gold">🥂</div>
+                        <h3 class="font-pinyon text-4xl mb-2 text-gold">Resepsi</h3>
+                        <div class="font-cinzel text-sm my-6 space-y-2 text-white">
+                            <p class="font-bold text-gold text-lg">Minggu, 19 April 2026</p>
+                            <p>Pukul 11.00 - 13.00 WIB</p>
+                        </div>
+                        <p class="text-xs text-gray-300 mb-8 font-serif uppercase tracking-wider leading-relaxed">Gor Tanjung Duren<br>Jl. Tanjung Duren Barat IV No.10, RT.9/RW.5, Tj. Duren Utara, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470</p>
+                        <a href="https://maps.google.com/?q=Gor+Tanjung+Duren" target="_blank" class="text-[10px] bg-navy border border-gold text-gold px-8 py-2 rounded-sm font-bold tracking-widest hover:bg-gold hover:text-navy transition shadow-lg">GOOGLE MAPS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 text-center">
+            <div class="max-w-4xl mx-auto px-4 bg-navy/90 backdrop-blur-md rounded-2xl p-8 border border-gold/40 shadow-2xl" data-aos="fade-up">
+                <h2 class="font-pinyon text-5xl text-gold mb-6">Wedding Gift</h2>
+                <p class="font-serif text-gray-300 mb-10 text-xs max-w-lg mx-auto tracking-wide">Doa restu Anda merupakan karunia yang sangat berarti bagi kami.</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-black/50 p-6 rounded-xl border border-gold/30 hover:border-gold transition flex flex-col items-center group shadow-inner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1200px-Bank_Central_Asia.svg.png" 
+                             alt="Logo BCA" 
+                             class="h-8 mb-3 filter brightness-0 invert opacity-80 group-hover:opacity-100 transition"> 
+                        
+                        <p class="text-[10px] text-gray-400 mb-4 uppercase tracking-widest">a.n Muhammad Maulana</p>
+                        
+                        <div class="w-full bg-navy p-3 rounded border border-dashed border-gold/50 mb-4 relative">
+                            <span id="norek-maul" class="font-mono text-xl font-bold text-gold tracking-wider drop-shadow-sm">8350110152</span>
+                        </div>
+                        
+                        <button onclick="salin('norek-maul', 'alert-maul')" class="w-full bg-gold/10 border border-gold text-gold py-2 rounded text-xs font-bold hover:bg-gold hover:text-navy transition flex items-center justify-center gap-2">
+                            <span></span> COPY
+                        </button>
+                    </div>
+
+                    <div class="bg-black/50 p-6 rounded-xl border border-gold/30 hover:border-gold transition flex flex-col items-center group shadow-inner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1200px-Bank_Central_Asia.svg.png" 
+                             alt="Logo BCA" 
+                             class="h-8 mb-3 filter brightness-0 invert opacity-80 group-hover:opacity-100 transition">
+                        
+                        <p class="text-[10px] text-gray-400 mb-4 uppercase tracking-widest">a.n Dita Aprilia</p>
+                        
+                        <div class="w-full bg-navy p-3 rounded border border-dashed border-gold/50 mb-4 relative">
+                            <span id="norek-dita" class="font-mono text-xl font-bold text-gold tracking-wider drop-shadow-sm">3420226259</span>
+                        </div>
+                        
+                        <button onclick="salin('norek-dita', 'alert-dita')" class="w-full bg-gold/10 border border-gold text-gold py-2 rounded text-xs font-bold hover:bg-gold hover:text-navy transition flex items-center justify-center gap-2">
+                            <span></span> COPY
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 text-center relative">
+            <div class="max-w-4xl mx-auto px-6 relative z-10" data-aos="fade-up">
+                
+                <div class="bg-navy/95 backdrop-blur-md border border-gold/40 rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
+                    
+                    <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/50"></div>
+                    <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/50"></div>
+
+                    <h2 class="font-pinyon text-5xl text-gold mb-4 mt-2 drop-shadow-md">Kirim Ucapan</h2>
+                    <p class="font-serif text-gray-200 mb-8">Tuliskan doa restu Anda. Pesan akan dikirim melalui WhatsApp.</p>
+                    
+                    <div class="bg-black/50 p-6 md:p-8 rounded-xl border border-gold/30 mb-16 max-w-lg mx-auto text-left shadow-inner">
+                        <div class="mb-5">
+                            <label class="block text-[10px] font-bold text-gold mb-2 uppercase tracking-widest">Nama Anda</label>
+                            <input type="text" id="nama-pengirim" placeholder="Contoh: Budi & Keluarga" class="w-full px-4 py-3 rounded bg-navy/80 border border-gray-600 text-white focus:outline-none focus:border-gold text-sm font-serif">
+                        </div>
+                        <div class="mb-5">
+                            <label class="block text-[10px] font-bold text-gold mb-2 uppercase tracking-widest">Ucapan & Doa</label>
+                            <textarea id="pesan-ucapan" rows="3" placeholder="Selamat menempuh hidup baru..." class="w-full px-4 py-3 rounded bg-navy/80 border border-gray-600 text-white focus:outline-none focus:border-gold text-sm font-serif"></textarea>
+                        </div>
+                        <div class="mb-8">
+                            <label class="block text-[10px] font-bold text-gold mb-2 uppercase tracking-widest">Konfirmasi Kehadiran</label>
+                            <select id="status-kehadiran" class="w-full px-4 py-3 rounded bg-navy/80 border border-gray-600 text-white focus:outline-none focus:border-gold text-sm font-serif appearance-none">
+                                <option value="Hadir" class="bg-navy">Akan Hadir</option>
+                                <option value="Tidak Hadir" class="bg-navy">Tidak Bisa Hadir</option>
+                                <option value="Masih Ragu" class="bg-navy">Masih Ragu-ragu</option>
+                            </select>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <button onclick="kirimKeWA('maul')" class="bg-gold text-navy font-bold py-3 rounded hover:bg-white transition text-xs tracking-wider shadow-md">MAUL</button>
+                            <button onclick="kirimKeWA('dita')" class="bg-navy border border-gold text-gold font-bold py-3 rounded hover:bg-gold hover:text-navy transition text-xs tracking-wider shadow-md">DITA</button>
+                        </div>
+                    </div>
+
+                    <h2 class="font-pinyon text-5xl md:text-6xl text-white mb-6 drop-shadow-md">Terima Kasih</h2>
+                    <p class="font-serif text-gray-200 mb-8 leading-relaxed max-w-xl mx-auto text-sm">
+                        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.
+                    </p>
+                    <h3 class="font-cinzel text-xl md:text-2xl text-gold mb-12">Wassalamu’alaikum Wr. Wb.</h3>
+
+                    <div class="font-cinzel border-t border-gold/20 pt-10 mt-6 text-center">
+                        <p class="text-[10px] tracking-[0.3em] text-gold/80 uppercase mb-8">KAMI YANG BERBAHAGIA</p>
+                        
+                        <h2 class="font-pinyon text-5xl md:text-6xl mb-2 text-white drop-shadow-sm">Maul & Dita</h2>
+                        
+                        <p class="font-serif text-gold text-sm tracking-widest mb-8 drop-shadow-sm">
+                            #MAULangkahbersamaDITA
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-500/50 text-xs text-gray-200">
+                            
+                            <div class="text-center py-4 md:py-0 md:px-8">
+                                <p class="font-bold text-gold mb-1 text-sm">Kel. Bpk. Asep Cecep Sukarna</p>
+                                <p>& Ibu Rosita</p>
+                            </div>
+                            
+                            <div class="text-center py-4 md:py-0 md:px-8">
+                                <p class="font-bold text-gold mb-1 text-sm">Kel. Bpk. Slamet</p>
+                                <p>& Ibu Yayam</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-8 text-center text-gray-400 text-[10px] font-serif uppercase tracking-widest border-t border-gold/30">
+        <p>© 2026 Maul & Dita Wedding</p>
+        <p>Built with ❤️ by Muhammad Maulana</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+    <script src="script.js"></script>
+
+</body>
+</html>

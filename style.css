@@ -1,0 +1,79 @@
+/* Import Font Estetik dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap');
+
+/* --- Mengatur Font Family --- */
+.font-vibes { font-family: 'Great Vibes', cursive; }
+.font-cormorant { font-family: 'Cormorant Garamond', serif; }
+
+/* --- Warna Khusus (Navy & Gold) --- */
+.text-navy { color: #0a192f; } 
+.bg-navy { background-color: #0a192f; } 
+.text-gold { color: #d4af37; } 
+.border-gold { border-color: #d4af37; }
+
+/* --- BODY: BACKGROUND UTAMA UNDANGAN (MOTIF GELAP BARU) --- */
+body {
+    /* 1. UBAH NAMA FILE INI SESUAI DENGAN YANG BOS SIMPAN DI FOLDER */
+    background-image: url('assets/images/bg-gelap.png') !important; 
+    
+    /* Warna dasar Navy untuk transisi/loading */
+    background-color: #0b1221 !important; 
+    
+    /* 2. SETTING GAMBAR MEMENUHI LAYAR (FULL BACKGROUND) */
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important; /* Efek Parallax: diam saat di-scroll */
+    
+    min-height: 100vh;
+    transition: all 0.5s ease;
+}
+
+/* JIKA GAMBARNYA ADALAH POLA (PATTERN) KECIL YANG HARUS DIULANG, PAKAI SETTINGAN INI SEBAGAI GANTINYA:
+   Hapus 4 baris settingan di atas, lalu gunakan:
+   background-size: 400px !important;
+   background-repeat: repeat !important;
+   background-position: top left !important;
+   background-attachment: fixed !important;
+*/
+
+/* Animasi Putar Piringan Hitam */
+@keyframes putar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.muter-terus {
+    animation: putar 4s linear infinite;
+}
+
+/* --- PERBAIKAN KONTRAS KARTU DEPAN --- */
+#cover .text-gray-500,
+#cover .text-gray-600,
+#cover .text-gray-400 {
+    color: #0a192f; 
+    font-weight: 600; 
+}
+
+#cover > div.text-center {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+    border: 1px solid rgba(212, 175, 55, 0.5); 
+}
+
+/* --- STYLE KHUSUS UNTUK COVER DEPAN --- */
+#cover {
+    /* 1. Kita timpa warna background bawaan (bg-navy/95) agar transparan */
+    background-color: transparent !important;
+
+    /* 2. Pasang gambar background baru khusus untuk cover */
+    /* PASTIKAN nama filenya sesuai dengan yang Bos simpan di Langkah 1 */
+    background-image: url('assets/images/cover-bg.png') !important;
+
+    /* 3. Agar gambar memenuhi layar penuh dan posisinya di tengah */
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    
+    /* Optional: Menambah sedikit efek gelap agar tulisan lebih kebaca */
+    box-shadow: inset 0 0 0 2000px rgba(11, 18, 33, 0.3) !important;
+}
